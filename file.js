@@ -1,4 +1,7 @@
 const fs = require('fs');
+const os = require('os');
+
+console.log(os.cpus().length)
 
 // Synchronous write
 fs.writeFileSync('contact.txt', 'this is from sync write', );
@@ -6,7 +9,7 @@ fs.writeFileSync('contact.txt', 'this is from sync write', );
 // Asynchronous write
 fs.writeFile('./contact.txt', 'this is from async write', (err) => {
     if (err) {
-        console.error('Error writing file:', err);
+        console.error('Error writing file:', err);  
         return;
     }else{
         console.log('Asynchronous write complete');
