@@ -1,7 +1,20 @@
 const fs = require('fs');
 
-const data = fs.writeFileSync('test.txt', 'Hello, World!');
+// Synchronous write
+// fs.writeFileSync('test.txt', 'Hello, World!', );
 
+// Asynchronous write
+fs.writeFile('./test.txt', 'Hello, World!', (err) => {
+    if (err) {
+        console.error('Error writing file:', err);
+        return;
+    }
+    console.log('Asynchronous write complete');
+});
+
+// Synchronous Read
+const results = fs.readFileSync('./contact.txt', 'utf-8')
+console.log('Synchronous read:', results);
 
 // Asynchronous read
 fs.readFile('test.txt', 'utf8', (err, data) => {
@@ -36,7 +49,7 @@ fs.readdir('newDir', (err, files) => {
 
 
 
-
+// Definition: A module is typically a single JavaScript file that contains functions, objects, or variables. It can be a built-in module, a third-party module (installed via npm), or a custom module created by the developer.
 
 
 
