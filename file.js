@@ -31,3 +31,14 @@ fs.readdir('newDir', (err, files) => {
     console.log('Files in newDir:', files);
 });
 
+
+
+
+
+
+
+
+
+
+
+ // In Node.js, fs stands for File System, a built-in module that provides methods for interacting with the file system on your computer. It allows you to perform operations like reading, writing, updating, deleting, and managing files and directories.
