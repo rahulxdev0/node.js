@@ -1,37 +1,44 @@
 const fs = require('fs');
 
 // Synchronous write
-// fs.writeFileSync('test.txt', 'Hello, World!', );
+fs.writeFileSync('contact.txt', 'this is from sync write', );
 
 // Asynchronous write
-fs.writeFile('./test.txt', 'Hello, World!', (err) => {
+fs.writeFile('./contact.txt', 'this is from async write', (err) => {
     if (err) {
         console.error('Error writing file:', err);
         return;
+    }else{
+        console.log('Asynchronous write complete');
     }
-    console.log('Asynchronous write complete');
-});
+}); // --> It only takes an error object
 
 // Synchronous Read
 const results = fs.readFileSync('./contact.txt', 'utf-8')
 console.log('Synchronous read:', results);
 
 // Asynchronous read
-fs.readFile('test.txt', 'utf8', (err, data) => {
+fs.readFile('./contact.txt', 'utf8', (err, results) => {
     if (err) {
         console.error('Error reading file:', err);
         return;
     }
-    console.log('Asynchronous read:', data);
-});
+    console.log('Asynchronous read:', results);
+});  // --> this function didn't return anything, it just prints the content of the file
 
 
-// Synchronous read
-const fileContent = fs.readFileSync('test.txt', 'utf8');
-console.log('File content:', fileContent);
+// Synchronous append
+fs.appendFileSync('./test.txt', `Appended text.\n`);
 
-const value = fs.appendFileSync('test.txt', '\nAppended text.');
-console.log('File after append:', value);
+// Asynchronous append
+// fs.appendFile('./test.txt', 'Appended text asynchronously.\n', (err) => {
+//     if (err) {
+//         console.error('Error appending to file:', err);
+//         return;
+//     }
+//     console.log('Asynchronous append complete');
+// });
+
 
 fs.mkdirSync('newDir', { recursive: true });
 console.log('Directory created successfully.');
@@ -44,6 +51,17 @@ fs.readdir('newDir', (err, files) => {
     console.log('Files in newDir:', files);
 });
 
+
+// copyFile
+// fs.copyFileSync('contact.txt', './copy.txt');
+
+// deleteFile
+// fs.unlinkSync('copy.txt');
+
+
+// stats
+const stats = fs.statSync('./contact.txt');
+console.log('File stats:', stats);
 
 
 
