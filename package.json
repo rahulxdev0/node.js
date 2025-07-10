@@ -15,5 +15,8 @@
     "12345"
   ],
   "author": "rahul",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "url": "^0.11.4"
+  }
 }
