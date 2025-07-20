@@ -73,6 +73,4 @@ console.log('File stats:', stats);
 // Definition: A module is typically a single JavaScript file that contains functions, objects, or variables. It can be a built-in module, a third-party module (installed via npm), or a custom module created by the developer.
 
 
-
-
  // In Node.js, fs stands for File System, a built-in module that provides methods for interacting with the file system on your computer. It allows you to perform operations like reading, writing, updating, deleting, and managing files and directories.
